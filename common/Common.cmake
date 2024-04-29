@@ -1,4 +1,9 @@
-set(CIOT_DIR ../../../../ciot_c)
+
+if(ENABLE_TESTS)
+    set(CIOT_DIR ../../ciot_c)
+else()
+    set(CIOT_DIR ../../../ciot_c)
+endif()
 
 set(CIOT_INCLUDE_DIRS
     ${CIOT_DIR}/include/types
