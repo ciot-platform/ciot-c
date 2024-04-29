@@ -45,6 +45,8 @@ const char *ciot_err_to_message(ciot_err_t err)
             return "ERR_DESERIALIZATION";
         case CIOT_ERR_SEND_DATA:
             return "ERR_SEND_DATA";
+        case CIOT_ERR_RECV_DATA:
+            return "CIOT_ERR_RECV_DATA";
         case CIOT_ERR_INVALID_SIZE:
             return "ERR_INVALID_SIZE";
         case CIOT_ERR_CLOSED:
@@ -59,12 +61,20 @@ const char *ciot_err_to_message(ciot_err_t err)
             return "ERR_DISCONNECTION";
         case CIOT_ERR_EXCEPTION:
             return "ERR_EXCEPTION";
-        case CIOT_ERR_TERMINATOR_MISSING:
-            return "ERR_TERMINATOR_MISSING";
         case CIOT_ERR_INVALID_ARG:
             return "ERR_INVALID_ARG";
+        case CIOT_ERR_NO_MEMORY:
+            return "CIOT_ERR_NO_MEMORY";
         case CIOT_ERR_TIMEOUT:
             return "ERR_TIMEOUT";
+        case CIOT_ERR_MONGOOSE:
+            return "CIOT_ERR_MONGOOSE";
+        case CIOT_ERR_IMPOSSIBLE_OP:
+            return "CIOT_ERR_IMPOSSIBLE_OP";
+        case CIOT_ERR_CHECKSUM:
+            return "CIOT_ERR_CHECKSUM";
+        case CIOT_ERR_PROTOCOL_VIOLATION:
+            return "CIOT_ERR_PROTOCOL_VIOLATION";
     default:
 #ifdef IDF_VER
     return esp_err_to_name(err);
