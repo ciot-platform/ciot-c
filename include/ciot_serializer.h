@@ -32,7 +32,7 @@ typedef enum ciot_serializer_type
 
 struct ciot_serializer
 {
-    ciot_serializer_type_t type;;
+    ciot_serializer_type_t type;
     ciot_serializer_to_bytes_fn *to_bytes;
     ciot_serializer_from_bytes_fn *from_bytes;
 };
