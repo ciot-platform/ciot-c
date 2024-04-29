@@ -26,6 +26,8 @@ extern "C" {
     if (x == NULL)         \
     return CIOT_ERR_NULL_ARG
 
+#define CIOT_PTYPE_CHECK(x, p_type) if(x->type != p_type) return CIOT_ERR_INVALID_TYPE
+
 #define CIOT_ERROR_PRINT(x)           \
     do                                \
     {                                 \
@@ -70,13 +72,13 @@ typedef enum
     CIOT_ERR_CONNECTION,
     CIOT_ERR_DISCONNECTION,
     CIOT_ERR_EXCEPTION,
-    CIOT_ERR_TERMINATOR_MISSING,
     CIOT_ERR_INVALID_ARG,
     CIOT_ERR_NO_MEMORY,
     CIOT_ERR_TIMEOUT,
     CIOT_ERR_MONGOOSE,
     CIOT_ERR_IMPOSSIBLE_OP,
     CIOT_ERR_CHECKSUM,
+    CIOT_ERR_PROTOCOL_VIOLATION,
 } ciot_err_t;
 
 const char *ciot_err_to_message(ciot_err_t err);
